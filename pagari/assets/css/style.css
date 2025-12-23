@@ -1,0 +1,426 @@
+:root {
+  --green-50: #ecfdf5;
+  --green-100: #d1fae5;
+  --green-600: #16a34a;
+  --green-700: #15803d;
+  --gray-900: #111827;
+  --gray-600: #4b5563;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(180deg, var(--green-50), #ffffff);
+  color: var(--gray-900);
+}
+
+/* TOPBAR */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(8px);
+  padding: 14px 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--green-100);
+}
+
+.brand {
+  font-weight: 800;
+  font-size: 20px;
+}
+
+.brand span {
+  margin-left: 8px;
+  background: var(--green-100);
+  color: var(--green-700);
+  font-size: 12px;
+  padding: 3px 10px;
+  border-radius: 999px;
+}
+
+.btn-logout {
+  text-decoration: none;
+  font-weight: 600;
+  color: #dc2626;
+}
+
+/* LAYOUT */
+.app {
+  display: flex;
+  min-height: calc(100vh - 64px);
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 260px;
+  background: #ffffff;
+  padding: 28px 20px;
+  box-shadow: 2px 0 12px rgba(0,0,0,0.05);
+}
+
+.sidebar a {
+  display: block;
+  padding: 12px 16px;
+  margin-bottom: 6px;
+  border-radius: 14px;
+  text-decoration: none;
+  color: var(--gray-600);
+  font-weight: 500;
+}
+
+.sidebar a:hover {
+  background: var(--green-100);
+  color: var(--green-700);
+}
+
+/* CONTENT */
+.content {
+  flex: 1;
+  padding: 32px 40px;
+}
+
+.section {
+  margin-bottom: 40px;
+}
+
+/* HEADINGS */
+h2 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+/* CARD */
+.card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+}
+
+.card small {
+  color: var(--gray-600);
+  font-weight: 500;
+}
+
+.card h3 {
+  font-size: 32px;
+  margin-top: 8px;
+}
+
+/* GRID (DASHBOARD) */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+}
+
+.metric {
+  font-size: 36px;
+  font-weight: 800;
+  margin-top: 6px;
+}
+
+.metric-sub {
+  font-size: 14px;
+  color: var(--gray-600);
+}
+
+@media (max-width: 900px) {
+  .sidebar {
+    display: none;
+  }
+
+  .content {
+    padding: 20px;
+  }
+
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===============================
+   NUTRISI PAGE
+================================ */
+
+/* SEARCH BAR */
+.nutrisi-search {
+  width: 280px;
+  padding: 10px 14px;
+  border-radius: 14px;
+  border: 1px solid var(--green-100);
+  outline: none;
+  font-size: 14px;
+}
+
+/* FILTER CHIPS */
+.filter-chip {
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--green-100);
+  background: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--gray-600);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filter-chip:hover {
+  background: var(--green-100);
+  color: var(--green-700);
+}
+
+.filter-chip.active {
+  background: var(--green-600);
+  color: #fff;
+  border-color: var(--green-600);
+}
+
+/* FORM INPUT */
+.input {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid var(--green-100);
+  font-size: 14px;
+  outline: none;
+}
+
+.input:focus {
+  border-color: var(--green-600);
+}
+
+/* BUTTON */
+.btn-primary {
+  background: var(--green-600);
+  color: #fff;
+  font-weight: 600;
+  border-radius: 14px;
+  padding: 12px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background: var(--green-700);
+}
+
+.btn-secondary {
+  display: block;
+  text-align: center;
+  padding: 10px;
+  border-radius: 14px;
+  border: 1px solid var(--green-600);
+  color: var(--green-700);
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.btn-secondary:hover {
+  background: var(--green-100);
+}
+
+/* BADGE KATEGORI */
+.badge {
+  display: inline-block;
+  background: var(--green-100);
+  color: var(--green-700);
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 999px;
+}
+
+/* GRID MAKANAN */
+.food-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.food-card {
+  background: #fff;
+  border-radius: 18px;
+  padding: 18px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.food-title {
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.food-nutri {
+  font-size: 13px;
+  color: var(--gray-600);
+  line-height: 1.6;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .nutrisi-search {
+    width: 100%;
+  }
+}
+
+/* ===============================
+   PEMANTAUAN GULA DARAH
+================================ */
+
+/* FORM INPUT GULA */
+.gula-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 16px;
+  align-items: end;
+}
+
+.gula-form label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--gray-600);
+  margin-bottom: 6px;
+  display: block;
+}
+
+.gula-form input {
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid var(--green-100);
+  font-size: 14px;
+  outline: none;
+}
+
+.gula-form input:focus {
+  border-color: var(--green-600);
+}
+
+/* TABEL RIWAYAT */
+.gula-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 12px;
+}
+
+.gula-table thead th {
+  font-size: 13px;
+  color: var(--gray-600);
+  font-weight: 600;
+  text-align: left;
+  padding: 0 12px;
+}
+
+.gula-table tbody tr {
+  background: #fff;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.06);
+  border-radius: 14px;
+}
+
+.gula-table tbody td {
+  padding: 14px 12px;
+  font-size: 14px;
+}
+
+.gula-table tbody tr td:first-child {
+  border-radius: 14px 0 0 14px;
+}
+
+.gula-table tbody tr td:last-child {
+  border-radius: 0 14px 14px 0;
+}
+
+/* BUTTON AKSI */
+.btn-edit,
+.btn-delete {
+  padding: 6px 14px;
+  font-size: 12px;
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none;
+  margin-right: 6px;
+}
+
+.btn-edit {
+  border: 1px solid var(--green-600);
+  color: var(--green-700);
+}
+
+.btn-edit:hover {
+  background: var(--green-100);
+}
+
+.btn-delete {
+  border: 1px solid #dc2626;
+  color: #dc2626;
+}
+
+.btn-delete:hover {
+  background: #fee2e2;
+}
+
+/* CARD STATUS */
+.status-normal {
+  color: var(--green-700);
+  font-weight: 600;
+}
+
+/* CHART CONTAINER */
+.chart-wrapper {
+  padding: 20px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .gula-form {
+    grid-template-columns: 1fr;
+  }
+
+  .btn-primary {
+    width: 100%;
+  }
+
+  .gula-table thead {
+    display: none;
+  }
+
+  .gula-table tbody tr {
+    display: block;
+  }
+
+  .gula-table tbody td {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 14px;
+  }
+}
+
+/* PROGRESS BAR */
+.progress {
+  width: 100%;
+  height: 10px;
+  background: #e5e7eb;
+  border-radius: 999px;
+  overflow: hidden;
+  margin-top: 12px;
+}
+
+.progress-bar {
+  height: 100%;
+  background: #22c55e;
+  border-radius: 999px;
+}
